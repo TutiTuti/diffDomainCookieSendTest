@@ -1,0 +1,17 @@
+server:
+  port: 8000
+  ssl:
+    enabled: true
+    key-store: classpath:back.store.p12
+    key-store-password: 123456
+    key-store-type: PKCS12
+
+spring:
+  servlet:
+    cookie:
+      secure: true
+      same-site: NONE
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.boot: DEBUG

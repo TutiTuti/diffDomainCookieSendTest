@@ -16,7 +16,7 @@ public class CookieController {
 
     @GetMapping("/api/test-cookie")
     public void testCookie(HttpServletResponse res){
-        String cookieValue = "cookie-test=123456; Max-Age=3600; Path=/; Secure; SameSite=None; HttpOnly";
+        String cookieValue = "cookie-test=123456; Max-Age=3600; Path=/; Secure; SameSite=None";
         res.addHeader("Set-Cookie", cookieValue);
         return ;
     }

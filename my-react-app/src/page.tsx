@@ -1,12 +1,14 @@
 // page.tsx
 import React, { useEffect, useState } from 'react';
+import { useCookies } from "react-cookie";
 
 const Page: React.FC = () => {
   const [cookieValue, setCookieValue] = useState('');
-
+  const [cookies] = useCookies();
   const sendRequest = async () => {
     try {
-      const res = await fetch('https://back.store:8000/api/test-cookie', {
+      const res = await fetch('/api/test-cookie', {
+        // const res = await fetch('https://ficket.store/api/test-cookie', {
         method: 'GET',
         credentials: 'include', // 쿠키 주고받기 필수
       });
@@ -19,9 +21,10 @@ const Page: React.FC = () => {
   };
 
   const checkCookies = () => {
-    const cookies = document.cookie;
-    console.log('🍪 현재 쿠키:', cookies);
-    setCookieValue(cookies || '없음');
+    const cookiess = document.cookie;
+    console.log('🍪 현재 쿠키:', cookiess);
+    console.log("🍪 쿠키 내용~:", cookies["cookie-test"]);
+    setCookieValue(cookiess || '없음');
   };
 
   useEffect(() => {

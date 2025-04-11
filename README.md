@@ -4,3 +4,4 @@
 
 react  vite.config.js 에서 프록시 설정을 하여 해당 쿠키를 받을 수 있도록 하였습니다.
 
+[테스트 결과 정리 글](https://tutic982.tistory.com/7)
